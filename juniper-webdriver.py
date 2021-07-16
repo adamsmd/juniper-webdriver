@@ -20,7 +20,7 @@ parser.add_argument('--openconnect', help='command used to run `openconnect`',
 args = parser.parse_args()
 
 try:
-  driver = webdriver.Firefox()
+  driver = webdriver.Firefox(service_log_path='/dev/null')
   driver.get(args.gateway)
   dsid = None
   while True:
